@@ -13,6 +13,7 @@ public class Principal
         switch (opt) 
         {
             case 1:
+                
                 System.out.println("Es el punto 1");
                 break;
         
@@ -20,6 +21,8 @@ public class Principal
                 System.out.println("Pagina en mantenimiento");
                 break;
         }
+
+        
 
     }
     
