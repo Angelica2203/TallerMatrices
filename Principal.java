@@ -10,9 +10,10 @@ public class Principal
         d = sc.nextInt();
         System.out.println("Ingrese el punto a visualizar del 1 al 11: ");
         opt = sc.nextInt();
-        switch (sc) 
+        switch (opt) 
         {
             case 1:
+                
                 System.out.println("Es el punto 1");
                 break;
         
@@ -20,6 +21,8 @@ public class Principal
                 System.out.println("Pagina en mantenimiento");
                 break;
         }
+
+        
 
     }
     
