@@ -1,15 +1,112 @@
+import java.util.Scanner;
+
 public class Metodos 
 {
-    public int[][] LlenarMatriz( int [][] m)
+    public int[][] llenarMatriz( int d )
     {
-        for(int i = 0; i < m.length; i++)
+        int[][] matriz = new int[d][d];
+        for( int i = 0; i < matriz.length; i ++)
         {
-            for(int j = 0; j < m.length; j++)
+            for( int j = 0; j < matriz.length; j ++)
             {
-                m[i][j] = (int)(Math.random() * 100 + 1); 
+                matriz[i][j] = (int) (Math.random() * 500 + 1);
+            }
+
+        }
+        return matriz;
+    }
+    public int sumaMatriz( int ma[][])
+    {
+        int acum = 0;
+        for( int i = 0; i < ma.length; i ++)
+        {
+            for( int j = 0; j < ma.length; j ++)
+            {
+                acum += ma[i][j];
             }
         }
-        return m;
+        return acum;
     }
-    
+    public int SolicitarDimension()
+    {
+        Scanner sc = new Scanner(System.in);
+        int n = 0;
+        System.out.println("Ingrese la dimension de la matriz: ");
+        n = sc.nextInt();
+        return n;
+    }
+    public int NumeroMayor(int[][] m)
+    {
+        int nm = 0;
+        for( int i = 0; i < m.length; i ++)
+        {
+            for( int j = 0; j < m.length; j ++)
+            {
+                if (m[i][j] > nm) 
+                {
+                    nm = m[i][j];
+                    
+                }
+            }
+        }
+        return nm;
+
+    }
+    public void MostratMatrizOriginal(int [][]m)
+    {
+        for( int i = 0; i < m.length; i ++)
+        {
+            for( int j = 0; j < m.length; j ++)
+            {
+                System.out.print(" - " + m[i][j]);
+            }
+            System.out.println();
+        }
+    }
+    public int [] PosicionMayor (int [][]m)
+    {
+        int nm = 0;
+        int []pos = new int[2];
+        for( int i = 0; i < m.length; i ++)
+        {
+            for( int j = 0; j < m.length; j ++)
+            {
+                if (m[i][j] > nm) 
+                {
+                    nm = m[i][j];
+                    pos[0] = i;
+                    pos[1] = j;   
+                }
+            }
+        }
+        return pos;
+    }
+    public int[] sumafila( int [][]m)
+    {
+        int [] suma = new int[m.length];
+        for( int i = 0; i < m.length; i++)
+        {
+            int acum = 0;
+            for(int j = 0; j < m.length; j++)
+            {
+                acum += m[i][j];
+            }
+            suma[i] = acum;
+        }
+        return suma;
+    }
+    public int[] sumaColumna( int [][]m)
+    {
+        int [] suma = new int[m.length];
+        for( int j = 0; j < m.length; j++)
+        {
+            int acum = 0;
+            for(int i = 0; i < m.length; i++)
+            {
+                acum += m[i][j];
+            }
+            suma[j] = acum;
+        }
+        return suma;
+    }
 }
