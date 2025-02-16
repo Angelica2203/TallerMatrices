@@ -32,6 +32,10 @@ public class Principal //Menu
                 p5 punto5 = new p5();
                 punto5.vector(d);
                 break;
+            case 6:
+                p6 punto6 = new p6();
+                punto6.ColumFilaVector(d);
+                break;
             
         
             default:
