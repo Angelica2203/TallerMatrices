@@ -109,4 +109,19 @@ public class Metodos
         }
         return suma;
     }
+    public int[][] llenarMatrizManual( int d )
+    {
+        Scanner sc = new Scanner(System.in);
+        int[][] matriz = new int[d][d];
+        for( int i = 0; i < matriz.length; i ++)
+        {
+            for( int j = 0; j < matriz.length; j ++)
+            {
+                System.out.println("Ingrese el numero: ");
+                matriz[i][j] = sc.nextInt();
+            }
+
+        }
+        return matriz;
+    }
 }
