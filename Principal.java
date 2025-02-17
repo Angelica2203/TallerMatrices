@@ -40,6 +40,10 @@ public class Principal //Menu
                 p7 punto7 = new p7();
                 punto7.punto7(d);
                 break;
+            case 8:
+                p8 punto8 = new p8();
+                punto8.punto8(d);
+                break;
             
         
             default:
