@@ -35,23 +35,7 @@ public class Metodos
         n = sc.nextInt();
         return n;
     }
-    public int NumeroMayor(int[][] m)
-    {
-        int nm = 0;
-        for( int i = 0; i < m.length; i ++)
-        {
-            for( int j = 0; j < m.length; j ++)
-            {
-                if (m[i][j] > nm) 
-                {
-                    nm = m[i][j];
-                    
-                }
-            }
-        }
-        return nm;
 
-    }
     public void MostratMatrizOriginal(int [][]m)
     {
         for( int i = 0; i < m.length; i ++)
@@ -65,15 +49,33 @@ public class Metodos
     }
     public int [] PosicionMayor (int [][]m)
     {
-        int nm = 0;
+        int my = m[0][0];
         int []pos = new int[2];
         for( int i = 0; i < m.length; i ++)
         {
             for( int j = 0; j < m.length; j ++)
             {
-                if (m[i][j] > nm) 
+                if (m[i][j] > my) 
                 {
-                    nm = m[i][j];
+                    my = m[i][j];
+                    pos[0] = i;
+                    pos[1] = j;   
+                }
+            }
+        }
+        return pos;
+    }
+    public int [] PosicionMenor (int [][]m)
+    {
+        int mn = m[0][0];
+        int []pos = new int[2];
+        for( int i = 0; i < m.length; i ++)
+        {
+            for( int j = 0; j < m.length; j ++)
+            {
+                if (m[i][j] < mn) 
+                {
+                    mn = m[i][j];
                     pos[0] = i;
                     pos[1] = j;   
                 }
@@ -124,4 +126,32 @@ public class Metodos
         }
         return matriz;
     }
+    public int mayorMatriz (int [][]m)
+    {
+        int my = m[0][0];
+        for (int i = 0; i < m.length; i++) 
+        {
+            for (int j = 0; j < m.length; j++) 
+            { 
+                if(m[i][j] > my)
+                    my = m[i][j];                
+            } 
+        }
+        return my;
+    }
+    public int menorMatriz (int [][]m)
+    {
+        int mn = m[0][0];
+        for (int i = 0; i < m.length; i++) 
+        {
+            for (int j = 0; j < m.length; j++) 
+            { 
+                if(m[i][j] < mn)
+                    mn = m[i][j];                
+            } 
+        }
+        return mn;
+    }
+
+
 }
