@@ -152,6 +152,37 @@ public class Metodos
         }
         return mn;
     }
+    //Matriz en paralelo 
+    public double [][] LlenarMatrizParalelo()
+    {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Ingrese la cantidad de examenes: ");
+        int M = sc.nextInt();
+        System.out.println("Ingrese la cantidad de personas: ");
+        int N = sc.nextInt();
+        
+        double[][] matriz = new double[N][M];
+        for (int i = 0; i < N; i++)
+        {
+            for (int j = 0; j < M; j++)
+            {
+                System.out.print("Ingrese la calificación para la persona " + (i + 1) + " en el examen " + (j + 1) + ": ");
+                matriz[i][j] = sc.nextDouble();
+            }
+        }
+        return matriz;
+    }
+    public void mostrarMatrizParalelo( double[][] m)
+    {
+        for (int i = 0; i < m.length; i++) 
+        {
+            for (int j = 0; j < m[0].length; j++) 
+            {
+                System.out.print(" - " + m[i][j]);
+            }
+            System.out.println();    
+        }
+    }
 
 
 }
