@@ -166,7 +166,7 @@ public class Metodos
         {
             for (int j = 0; j < M; j++)
             {
-                System.out.print("Ingrese la calificación para la persona " + (i + 1) + " en el examen " + (j + 1) + ": ");
+                System.out.print("Ingrese la calificación para la persona " + (i + 1) + " del examen " + (j + 1) + ": ");
                 matriz[i][j] = sc.nextDouble();
             }
         }
@@ -182,6 +182,34 @@ public class Metodos
             }
             System.out.println();    
         }
+    }
+    public double[] promediofila( double [][]m)
+    {
+        double [] promedios = new double[m.length];
+        for( int i = 0; i < m.length; i++)
+        {
+            double suma = 0;
+            for(int j = 0; j < m[0].length; j++)
+            {
+                suma += m[i][j];
+            }
+            promedios[i] = suma / m[0].length;  //m[i].lenght para irregular
+        }
+        return promedios;
+    }
+    public double[] promedioColumna( double [][]m)
+    {
+        double [] promedios = new double[m[0].length];
+        for( int j = 0; j < m[0].length; j++)
+        {
+            double suma = 0;
+            for(int i = 0; i < m.length; i++)
+            {
+                suma += m[i][j];
+            }
+            promedios[j] = suma / m.length;
+        }
+        return promedios;
     }
 
 
